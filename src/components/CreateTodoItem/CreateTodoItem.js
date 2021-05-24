@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { MdAdd } from "react-icons/md";
 import { useDispatch } from "react-redux";
-import { sendTodo } from "../../store/actions/createTodo";
+import { createTodoRequest } from "../../store/actions/createTodo";
 
 import classes from "./CreateTodoItem.module.css";
 
@@ -11,7 +11,7 @@ export default function CreateTodoItem() {
 
   const addNewTodo = (event) => {
     event.preventDefault();
-    dispatch(sendTodo(value));
+    dispatch(createTodoRequest(value));
     setValue("");
   };
 
