@@ -22,7 +22,6 @@ export const createTodoRequest = (input) => {
           todo: input,
         })
         .then(() => {
-          dispatch(createTodoSuccess(input));
           dispatch(
             showNotification({
               status: "success",
@@ -34,7 +33,6 @@ export const createTodoRequest = (input) => {
           dispatch(fetchTodo(input));
         })
         .catch((error) => {
-          dispatch(createTodoFail(input));
           dispatch(
             showNotification({
               status: "error",
