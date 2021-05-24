@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Tech Stack 👨‍💻
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+| Frontend    | Backend  |
+| ----------- | -------- |
+| React       | Firebase |
+| Redux       |
+| CSS Modules |
+| Material UI |
 
-## Available Scripts
+# Demo 📺
 
-In the project directory, you can run:
+- [Todo-App](https://www.loom.com/share/78a871ba135a409c8c1ce32db0dd51df)
 
-### `npm start`
+# Currently supported feature set ✅
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Add a new item
+- Toggle an item as completed / still in-progress
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Motivation 🤔
 
-### `npm test`
+Todo app exists to ease your daily tasks that anyone can use.
+For a good over view of the motivations of the project you can take a look
+at these external resources:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 📖 [Redux](https://redux-toolkit.js.org/)
+- 📖 [Firebase](https://firebase.google.com/docs)
+- 📖 [Material-ui](https://material-ui.com/)
 
-### `npm run build`
+# Documentation 📖
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## About 👋
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Get started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   - Use `git clone` to clone the project on your machine.
 
-### `npm run eject`
+   - Open a terminal:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+     > Make sure you are on the same directory you cloned the project at
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   - Use `npm install` to to install all the dependencies.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+     > In case of any errors please make sure to run the following command in order
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+     ```
+     npm update
+     npm install
+     ```
 
-## Learn More
+2. Backend service
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   - [Create firestore](https://firebase.google.com/docs/firestore?authuser=1)
+   - Database structure should be like:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+     ```javascript
+     fbStructure = [
+       {
+         inProgress: boolean,
+         todo: "string",
+         timestamp: timestamp,
+       },
+     ];
+     ```
 
-### Code Splitting
+   - Copy your auto generated SDK setup and configuration:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+     ```javascript
+     const firebaseConfig = {
+       apiKey: "api key",
+       authDomain: "authDomain",
+       databaseURL: "db url",
+       projectId: "prject-id",
+       ...
+     };
+     ```
 
-### Analyzing the Bundle Size
+   - Carete a new `.env` in the project root directory **to make sure your credentials are secured**
+   - Past the SDK config insdie the `.env`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. Use `npm start` to start the project 🚀
